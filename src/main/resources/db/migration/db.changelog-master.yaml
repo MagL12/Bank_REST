@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: db/migration/changelog-001-create-user-table.yaml
+  - include:
+      file: db/migration/changelog-002-create-cards-table.yaml
+  - include:
+      file: db/migration/db.changelog-2.1-status.yaml

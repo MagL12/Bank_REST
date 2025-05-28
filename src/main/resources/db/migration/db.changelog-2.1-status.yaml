@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4
+      author: you
+      changes:
+        - addColumn:
+            tableName: cards
+            columns:
+              - column:
+                  name: status
+                  type: VARCHAR(32)
+                  defaultValue: ACTIVE
+                  constraints:
+                    nullable: false
+        - dropColumn:
+            tableName: cards
+            columnName: enabled
