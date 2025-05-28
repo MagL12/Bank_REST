@@ -1,7 +1,6 @@
 package com.example.bankcards.util;
 
 import com.example.bankcards.service.UserDetailsServiceImpl;
-import com.example.bankcards.util.JwtUtil;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;
 import jakarta.servlet.FilterChain;

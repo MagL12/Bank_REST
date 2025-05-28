@@ -96,7 +96,7 @@ public class CardController {
             throw e;
         }
     }
-
+    //sdgkjsdfgklhjsdlfkjhsdglkh
     @PutMapping("/api/admin/cards/{id}/block")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<CardDTO> blockCardAsAdmin(@PathVariable UUID id) {
@@ -124,4 +124,5 @@ public class CardController {
             throw e;
         }
     }
+
 }

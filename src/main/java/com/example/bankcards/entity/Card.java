@@ -90,20 +90,13 @@ public class Card {
     @Converter
     public static class CardNumberConverter implements AttributeConverter<String, String> {
 
-        private static EncryptionConfig encryptionConfig;
-
-        @Autowired
-        public void setEncryptionConfig(EncryptionConfig encryptionConfig) {
-            CardNumberConverter.encryptionConfig = encryptionConfig;
-        }
-
         @Override
         public String convertToDatabaseColumn(String cardNumber) {
             if (cardNumber == null) {
                 return null;
             }
             try {
-                return EncryptionUtil.encrypt(cardNumber, encryptionConfig.getSecretKey());
+                return EncryptionUtil.encrypt(cardNumber);
             } catch (Exception e) {
                 throw new RuntimeException("Failed to encrypt card number", e);
             }
@@ -115,7 +108,7 @@ public class Card {
                 return null;
             }
             try {
-                return EncryptionUtil.decrypt(encryptedCardNumber, encryptionConfig.getSecretKey());
+                return EncryptionUtil.decrypt(encryptedCardNumber);
             } catch (Exception e) {
                 throw new RuntimeException("Failed to decrypt card number", e);
             }
